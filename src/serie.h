@@ -32,7 +32,7 @@ gchar* get_port_string(void);
 #define BUFFER_RECEPTION 8192
 #define BUFFER_EMISSION 4096
 #define LINE_FEED 0x0A
-#define POLL_DELAY 100               /* in ms (for control signals) */
+#define POLL_DELAY 1               /* in ms (for control signals) */
 #define P_LOCK "/var/lock"           /* lock file location */
 
 
