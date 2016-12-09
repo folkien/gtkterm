@@ -70,6 +70,7 @@
 #include "macros.h"
 #include "auto_config.h"
 #include "logging.h"
+#include "detonator.h"
 
 #include <config.h>
 #include <glib/gi18n.h>
@@ -171,6 +172,8 @@ static GtkItemFactoryEntry Tableau_Menu[] = {
   {N_("/View/Show _index"), NULL, (GtkItemFactoryCallback)toggle_index, 0, "<CheckItem>"},
   {N_("/View/Separator") , NULL, NULL, 0, "<Separator>"},
   {N_("/View/_Send hexadecimal data") , NULL, (GtkItemFactoryCallback)show_hide_hex, 0, "<CheckItem>"},
+  {N_("/_Debugging"), NULL, NULL, 0, "<Branch>"},
+  {N_("/Debugging/_Detonator"), NULL, (GtkItemFactoryCallback)portDetonate, 0, "<StockItem>"},
   {N_("/_Help"), NULL, NULL, 0, "<LastBranch>"},
   {N_("/Help/_About..."), NULL, (GtkItemFactoryCallback)a_propos, 0, "<StockItem>", GTK_STOCK_DIALOG_INFO}
 };
