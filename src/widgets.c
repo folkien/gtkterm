@@ -130,6 +130,7 @@ gint gui_copy_all_clipboard(void);
 
 /* Menu */
 #define NUMBER_OF_ITEMS 42
+#define array_sizeof(x) (sizeof(x)/sizeof(x[0]))
 
 static GtkItemFactoryEntry Tableau_Menu[] = {
   {N_("/_File") , NULL, NULL, 0, "<Branch>"},
@@ -318,7 +319,7 @@ void create_main_window(void)
   item_factory = gtk_item_factory_new(GTK_TYPE_MENU_BAR, "<main>", accel_group);
   gtk_item_factory_set_translate_func(item_factory, translate_menu, "<main>", NULL);
   gtk_window_add_accel_group(GTK_WINDOW(Fenetre), accel_group);
-  gtk_item_factory_create_items(item_factory, NUMBER_OF_ITEMS, Tableau_Menu, NULL);
+  gtk_item_factory_create_items(item_factory, array_sizeof(Tableau_Menu), Tableau_Menu, NULL);
   Menu = gtk_item_factory_get_widget(item_factory, "<main>");
   log_pause_resume_menu = gtk_item_factory_get_item(item_factory, "/Log/Pause");
   log_start_menu = gtk_item_factory_get_item(item_factory, "/Log/To File...");
