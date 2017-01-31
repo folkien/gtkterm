@@ -560,26 +560,49 @@ void show_control_signals(int stat)
     gtk_widget_set_sensitive(GTK_WIDGET(signals[0]), TRUE);
   else
     gtk_widget_set_sensitive(GTK_WIDGET(signals[0]), FALSE);
+
   if(stat & TIOCM_DSR)
     gtk_widget_set_sensitive(GTK_WIDGET(signals[1]), TRUE);
   else
     gtk_widget_set_sensitive(GTK_WIDGET(signals[1]), FALSE);
+
   if(stat & TIOCM_CD)
     gtk_widget_set_sensitive(GTK_WIDGET(signals[2]), TRUE);
   else
     gtk_widget_set_sensitive(GTK_WIDGET(signals[2]), FALSE);
+
   if(stat & TIOCM_CTS)
+  {
+  	gtk_label_set_text((GtkLabel*)signals[3], "CTS:1");
     gtk_widget_set_sensitive(GTK_WIDGET(signals[3]), TRUE);
+  }
   else
+  {
+  	gtk_label_set_text((GtkLabel*)signals[3], "CTS:0");
     gtk_widget_set_sensitive(GTK_WIDGET(signals[3]), FALSE);
+  }
+
   if(stat & TIOCM_RTS)
+  {
+  	gtk_label_set_text((GtkLabel*)signals[4], "RTS:1");
     gtk_widget_set_sensitive(GTK_WIDGET(signals[4]), TRUE);
+  }
   else
+  {
+  	gtk_label_set_text((GtkLabel*)signals[4], "RTS:0");
     gtk_widget_set_sensitive(GTK_WIDGET(signals[4]), FALSE);
+  }
+
   if(stat & TIOCM_DTR)
+  {
+  	gtk_label_set_text((GtkLabel*)signals[5], "DTR:1");
     gtk_widget_set_sensitive(GTK_WIDGET(signals[5]), TRUE);
+  }
   else
+  {
+  	gtk_label_set_text((GtkLabel*)signals[5], "DTR:0");
     gtk_widget_set_sensitive(GTK_WIDGET(signals[5]), FALSE);
+  }
 }
 
 gint signaux(GtkWidget *widget, guint param)
