@@ -58,10 +58,10 @@ typedef struct {
 } display_config_t;
 
 
-#define DEFAULT_FONT "Monospace, 12"
+#define DEFAULT_FONT "FiraCode, 12"
 #define DEFAULT_SCROLLBACK 200
 
-#define DEFAULT_PORT "/dev/ttyS0"
+#define DEFAULT_PORT "/dev/ttyACM0"
 #define DEFAULT_SPEED 9600
 #define DEFAULT_PARITY 0
 #define DEFAULT_BITS 8
