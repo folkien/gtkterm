@@ -136,8 +136,10 @@ void put_chars(char *chars, unsigned int size, gboolean crlf_auto)
 	current_buffer += size;
     }
    
-    if(write_func != NULL)
-	write_func(characters, size);
+  if(write_func != NULL)
+  {
+    write_func(characters, size);
+  }
 }
 
 void write_buffer(void)

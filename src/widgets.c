@@ -515,10 +515,12 @@ gint send_serial(gchar *string, gint len)
 
   bytes_written = Send_chars(string, len);
   if(bytes_written > 0)
-    {
-      if(echo_on)
-	  put_chars(string, bytes_written, crlfauto_on);
-    }
+  {
+    /// Trace to STD OUT
+    printf("--> [%s]\n", string);
+    if(echo_on)
+      put_chars(string, bytes_written, crlfauto_on);
+  }
 
   return bytes_written;
 }
